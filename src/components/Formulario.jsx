@@ -5,6 +5,11 @@ import ScaleLoader from "react-spinners/ScaleLoader";
 import Swal from "sweetalert2";
 
 const Formulario = () => {
+   const [pais, setPais] = useState("");
+    const [ciudad, setCiudad] = useState("");
+    const [clima, setClima] = useState([]);
+    const [mostrarSpinner, setMostrarSpinner] = useState(false);
+  
   return (
     <div>
       <section className="p-3 border rounded-3 bg-white container">
