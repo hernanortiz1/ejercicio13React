@@ -11,3 +11,9 @@ main {
   height: 70px;
   object-fit: cover;
 }
+
+.iconoClima {
+   width: 150px; 
+  height: auto;
+  object-fit: contain;
+}
