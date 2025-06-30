@@ -1,4 +1,5 @@
 import { Button, Col, Form, Row } from "react-bootstrap";
+import Clima from "./Clima";
 
 const Formulario = () => {
   return (
@@ -19,7 +20,9 @@ const Formulario = () => {
         </Form.Group>
       </section>
 
-      <section className="mt-4"></section>
+      <section className="mt-4">
+        <Clima/>
+      </section>
     </div>
   );
 };
