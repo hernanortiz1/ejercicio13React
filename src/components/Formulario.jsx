@@ -5,11 +5,10 @@ import ScaleLoader from "react-spinners/ScaleLoader";
 import Swal from "sweetalert2";
 
 const Formulario = () => {
-   const [pais, setPais] = useState("");
-    const [ciudad, setCiudad] = useState("");
-    const [clima, setClima] = useState([]);
-    const [mostrarSpinner, setMostrarSpinner] = useState(false);
-  
+  const [pais, setPais] = useState("");
+  const [ciudad, setCiudad] = useState("");
+  const [clima, setClima] = useState([]);
+  const [mostrarSpinner, setMostrarSpinner] = useState(false);
 
   const obtenerClima = async () => {
     if (pais === "" || ciudad === "") {
@@ -42,22 +41,39 @@ const Formulario = () => {
     <div>
       <section className="p-3 border rounded-3 bg-white container">
         <Form.Group>
-          
           <div className="d-md-flex align-items-center gap-2 my-2">
             <Form.Label className="fs-5 fw-bold">Pais</Form.Label>
-            <Form.Control required type="text" placeholder="Ingrese pais" />
+            <Form.Control
+              type="text"
+              placeholder="Ingrese pais"
+              required
+              value={pais}
+              onChange={(e) => setPais(e.target.value)}
+            />
 
             <Form.Label className="fs-5 fw-bold ms-md-4">Ciudad</Form.Label>
-            <Form.Control required type="text" placeholder="Ingrese ciudad" />
+            <Form.Control
+              type="text"
+              placeholder="Ingrese ciudad"
+              required
+              value={ciudad}
+              onChange={(e) => setCiudad(e.target.value)}
+            />
             <div className="mt-3 mt-md-0 text-center">
-              <Button>Consultar</Button>
+              <Button
+                onClick={obtenerClima}
+                variant="primary"
+                className="ms-md-2 fs-5 px-3"
+              >
+                Consultar
+              </Button>
             </div>
           </div>
         </Form.Group>
       </section>
 
       <section className="mt-4">
-        <Clima/>
+        <Clima />
       </section>
     </div>
   );
