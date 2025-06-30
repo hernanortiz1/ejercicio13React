@@ -73,7 +73,16 @@ const Formulario = () => {
       </section>
 
       <section className="mt-4">
-        <Clima />
+         {mostrarSpinner ? (
+                  <div className="my-4 d-flex justify-content-center align-items-center">
+                    <ScaleLoader color="#0d6efd" loading={mostrarSpinner} size={50} />
+                  </div>
+                ) : clima.length === 0 ? (
+                  <p className="text-center fs-3">No hay datos para mostrar</p>
+                ) : (
+                  <Clima climaProps={clima} />
+                )}
+    
       </section>
     </div>
   );
