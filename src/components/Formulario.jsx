@@ -10,6 +10,34 @@ const Formulario = () => {
     const [clima, setClima] = useState([]);
     const [mostrarSpinner, setMostrarSpinner] = useState(false);
   
+
+  const obtenerClima = async () => {
+    if (pais === "" || ciudad === "") {
+      Swal.fire({
+        icon: "error",
+        title: "Ingrese Pais y ciudad",
+        text: "Ingrese Pais y ciudad, por último consultar",
+      });
+      return;
+    }
+
+    try {
+      setMostrarSpinner(true);
+      const respuesta = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=026b51c14f1835bd462133b357c41c2f&units=metric&lang=es`
+      );
+
+      if (respuesta.status === 200) {
+        const datos = await respuesta.json();
+        console.log(datos.results);
+        setClima(datos.results);
+        setMostrarSpinner(false);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div>
       <section className="p-3 border rounded-3 bg-white container">
