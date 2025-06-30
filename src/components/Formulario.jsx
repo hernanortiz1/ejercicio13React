@@ -1,5 +1,8 @@
 import { Button, Col, Form, Row } from "react-bootstrap";
 import Clima from "./Clima";
+import { useEffect, useState } from "react";
+import ScaleLoader from "react-spinners/ScaleLoader";
+import Swal from "sweetalert2";
 
 const Formulario = () => {
   return (

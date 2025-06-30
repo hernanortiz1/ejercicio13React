@@ -5,7 +5,7 @@ const Clima = () => {
     <div>
       <div className="text-center bg-white rounded-3 p-3 container ">
         <Row className="mb-3 ">
-          <Form.Group as={Col} md="6">
+          <Form.Group as={Col} md="6" className="d-flex flex-column">
             <Form.Label>Pais, ciudad</Form.Label>
             <img src="" alt="Icono clima" />
           </Form.Group>
